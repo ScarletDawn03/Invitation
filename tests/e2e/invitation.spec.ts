@@ -19,20 +19,34 @@ async function fillFlow(page: import('@playwright/test').Page) {
     page.getByRole('button', { name: 'Submit my preferences' })
   ).toBeVisible()
 }
-test('No respects choice and main page omits Not now', async ({ page }) => {
+test('No shrinks and Yes grows within usable limits', async ({ page }) => {
   await page.goto('/')
-  await page.getByRole('button', { name: 'No, thank you' }).click()
-  await expect(page).toHaveURL(/\/$/)
-  await expect(
-    page.getByText('Thank you for being honest.', { exact: false })
-  ).toBeVisible()
-  await expect(
-    page.getByRole('button', { name: "Yes, I'd love to" })
-  ).toHaveCount(0)
+  const yes = page.getByRole('button', { name: "Yes, I'd love to" })
+  const no = page.getByRole('button', { name: 'No, thank you' })
+  const initialYes = await yes.boundingBox()
+  const initialNo = await no.boundingBox()
+  for (let i = 0; i < 5; i++) await no.click()
+  await expect(yes).toHaveCSS('min-height', '79px')
+  await expect(no).toHaveCSS('min-height', '44px')
+  await expect(yes).toHaveCSS('font-size', '19px')
+  await expect(no).toHaveCSS('font-size', '11px')
+  for (let i = 0; i < 8; i++) await no.click()
+  await expect(yes).toHaveCSS('min-height', '79px')
+  await expect(no).toHaveCSS('min-height', '44px')
+  const finalYes = await yes.boundingBox()
+  const finalNo = await no.boundingBox()
+  expect(finalYes!.height).toBeGreaterThan(initialYes!.height)
+  expect(finalNo!.height).toBeLessThan(initialNo!.height)
+  expect(finalNo!.height).toBeGreaterThanOrEqual(44)
+  for (const box of [finalYes!, finalNo!]) {
+    expect(box.x).toBeGreaterThanOrEqual(0)
+    expect(box.x + box.width).toBeLessThanOrEqual(page.viewportSize()!.width)
+  }
   expect(
     await page.evaluate(() => localStorage.getItem('little-date-v1'))
   ).toBeNull()
-  await expect(page.getByRole('button', { name: 'Not now' })).toHaveCount(0)
+  await yes.click()
+  await expect(page).toHaveURL(/dates$/)
 })
 test('mobile flow recovers choices and handles failed submission', async ({
   page

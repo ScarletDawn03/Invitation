@@ -14,7 +14,7 @@ npm run dev
 
 Without Supabase configuration, the complete wizard works and the review page explains that sending is unavailable. It never pretends to save a response. Unfinished preferences remain in this browser's localStorage, under `little-date-v1`; clearing site storage removes them. There are no analytics, tracking cookies, or personal contact fields.
 
-The flow is date → itinerary → review. Recipients can select one or more dates immediately, choose a complete itinerary or “Let’s decide together”, and see a receipt after submitting. Declining closes the invitation without sending a response. Timing is part of the selected plan: pickup at 11:00 AM and drop-off around 9:30–10:00 PM (Malaysia time). Submissions store `11:00` and `22:00` as the planned window; recipients do not choose custom times. Old `/times` links redirect to the itinerary step.
+The flow is date → itinerary → review. Recipients can select one or more dates immediately, choose a complete itinerary or “Let’s decide together”, and see a receipt after submitting. Clicking No gently shrinks that button and grows Yes over five steps, then stops at fixed limits. No remains at least 44px tall; only Yes starts the invitation. Timing is part of the selected plan: pickup at 11:00 AM and drop-off around 9:30–10:00 PM (Malaysia time). Submissions store `11:00` and `22:00` as the planned window; recipients do not choose custom times. Old `/times` links redirect to the itinerary step.
 
 ## Content
 
@@ -75,7 +75,7 @@ NUXT_APP_BASE_URL=/Invitation/ npm run generate
 npm run test:static
 ```
 
-Browser tests use local Google Chrome (`/usr/bin/google-chrome`). Override `CHROME_PATH` for another Chromium executable. The e2e harness starts the dev server automatically. Tests cover respectful No/exit behavior, multi-date flow, time ordering, exactly-one itinerary, route guards, refresh recovery, and unconfigured submission. Mocked submission tests cover network retry, duplicate-click protection, and blocked edits while sending. Cover and stop images are checked with both successful and failed photo requests. Unit tests verify weekends and full December 19–31 availability and payload rejection. No remote Supabase access is needed for these tests.
+Browser tests use local Google Chrome (`/usr/bin/google-chrome`). Override `CHROME_PATH` for another Chromium executable. The e2e harness starts the dev server automatically. Tests cover bounded Yes/No button resizing, multi-date flow, time ordering, exactly-one itinerary, route guards, refresh recovery, and unconfigured submission. Mocked submission tests cover network retry, duplicate-click protection, and blocked edits while sending. Cover and stop images are checked with both successful and failed photo requests. Unit tests verify weekends and full December 19–31 availability and payload rejection. No remote Supabase access is needed for these tests.
 
 Before launch, manually check keyboard focus, screen-reader announcements, reduced motion, the production subpath, missing images, and 320–430 px screens. Supabase and GitHub Pages setup are external steps; this repository does not provision accounts or publish itself until you push and configure hosting.
 
