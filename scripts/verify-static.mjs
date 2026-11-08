@@ -131,9 +131,7 @@ try {
     .toMatch(/confirmed|Sending is not set up/)
   if (submissions) {
     assert.equal(submissions, 1)
-    await expect(
-      page.locator('.confirmation-receipt')
-    ).toBeVisible()
+    await expect(page.locator('.confirmation-receipt')).toBeVisible()
   } else {
     await expect(page.getByRole('alert')).toContainText('Sending is not set up')
   }
