@@ -24,7 +24,7 @@ The flow is date → itinerary → review. Recipients can select one or more dat
 - Images: [asset instructions](public/images/itinerary/README.md).
 - Styling: `app/assets/css/main.css`.
 
-Options A, B, and C are distinct indoor dates: **A Little Luxury** (TRX, Aurum Theatre, Hokkaido Table), **Made Together** (Zen Ceramic and relaxed meals in Hartamas), and **Textiles & Chinatown** (Merdeka Textile Museum and dinner at Concubine). Each card has its own theme and a local venue cover photo. Meal venues not yet selected use illustrations and are clearly marked for choosing together. Schedules are suggestions; screenings, workshops, indoor tables and museum opening dates need confirming before booking.
+Options A, B, and C are distinct indoor dates: **A Little Luxury** (lunch at Solace, Aurum Theatre and dinner at Kenny Hills Bakers, TRX), **Made Together** (Common Man Coffee Roasters, Zen Ceramic and dinner at Bacio, Mont Kiara), and **Textiles & Chinatown** (lunch at Stefania, Merdeka Textile Museum and dinner at Concubine). Each card has its own theme and a local venue cover photo. Meal venues not yet selected use illustrations and are clearly marked for choosing together. Schedules are suggestions; screenings, workshops, indoor tables and museum opening dates need confirming before booking.
 
 “Let’s decide together” stores `decide-together` as the itinerary ID. Apply `202611080003_decide_together.sql` and redeploy the Edge Function before deploying this frontend. Old `/really` links redirect to the plan page.
 

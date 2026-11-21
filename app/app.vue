@@ -2,14 +2,24 @@
 const route = useRoute()
 const { storageWarning, pending } = useInvitationFlow()
 const steps = ['/dates', '/itinerary', '/review']
+// Follow the page that is on screen, not the route: during the out-in fade the
+// old page is still visible, so the progress bar waits for it to leave.
+const shownPath = ref(route.path)
 const step = computed(() =>
-  steps.indexOf(route.path === '/really' ? '/itinerary' : route.path)
+  steps.indexOf(shownPath.value === '/really' ? '/itinerary' : shownPath.value)
 )
+const pageTransition = {
+  name: 'page',
+  mode: 'out-in' as const,
+  onAfterLeave: () => {
+    shownPath.value = route.path
+  }
+}
 watch(
   () => route.path,
   async () => {
     await nextTick()
-    document.querySelector<HTMLElement>('main')?.focus()
+    document.querySelector<HTMLElement>('main')?.focus({ preventScroll: true })
   }
 )
 </script>
@@ -29,9 +39,11 @@ watch(
         >
       </header>
       <main id="main" tabindex="-1" :aria-busy="pending">
-        <InvitationStepProgress v-if="step >= 0" :step="step" />
+        <Transition name="page">
+          <InvitationStepProgress v-if="step >= 0" :step="step" />
+        </Transition>
         <ClientOnly
-          ><div :inert="pending"><NuxtPage /></div>
+          ><div :inert="pending"><NuxtPage :transition="pageTransition" /></div>
           <template #fallback
             ><div class="closing">
               <span class="large-heart" aria-hidden="true">♡</span>

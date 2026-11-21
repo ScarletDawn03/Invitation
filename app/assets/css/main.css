@@ -1248,8 +1248,8 @@ details[open] summary span {
 .page-enter-active,
 .page-leave-active {
   transition:
-    opacity 0.15s ease,
-    transform 0.15s ease;
+    opacity 0.25s ease-out,
+    transform 0.25s ease-out;
 }
 .page-enter-from,
 .page-leave-to {

@@ -3,9 +3,11 @@
 The active plans use locally hosted WebP images. Source pages and visible credits are recorded in `app/data/itineraries.ts`.
 
 - `aurum.webp`: GSC, Aurum Theatre at The Exchange TRX, luxury seating.
+- `solace.jpg`: Solace Bukit Bintang interior, via The Perpetual Saturday (carries the blog's watermark).
 - `kenny-trx.jpg`: Kenny Hills Bakers On The Park storefront, The Exchange TRX directory. Indoor seating to be requested.
-- `hokkaido.webp`: Hokkaido Table / GSC, TRX.
-- `zen-workshop.webp`: Zen Ceramic workshop reference; not a guarantee of the Sri Hartamas interior.
+- `bacio.jpg`: Bacio Italian Kitchen, Mont Kiara, via Portofino Group's Bacio page.
+- `stefania.jpg`: Stefania Ristorante Italiano dining room, via Stefania Group of Restaurants.
+- `zen-wheel.jpg`: Zen Ceramic wheel-throwing photo from zenceramic.asia; not a guarantee of the Sri Hartamas interior.
 - `urmu.webp`: Ahmad Shukri Mohamed, _Tubuh Dalam Jiwa_ (2008), from the +n by UR-MU collection, distributed through its CloudJoi listing.
 - `horizon.webp`: Horizon Grill interior, via Forbes Travel Guide’s Banyan Tree Kuala Lumpur listing.
 

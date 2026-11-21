@@ -40,7 +40,7 @@ const edition = computed(() => {
       emblem: '織',
       subtitle: 'An afternoon of beautiful discoveries',
       admission: 'FOR TWO',
-      footer: 'CAFÉ · CULTURE · CHINATOWN'
+      footer: 'PASTA · CULTURE · CHINATOWN'
     }
   return {
     theme: 'museum',

@@ -1,5 +1,8 @@
 <script setup lang="ts">
 const { accept, draft } = useInvitationFlow()
+// Snapshot on load: accepting flips draft.accepted while this page is still
+// fading out, which would otherwise flash the "Continue planning" button.
+const returning = draft.value.accepted
 </script>
 <template>
   <div>
@@ -21,7 +24,7 @@ const { accept, draft } = useInvitationFlow()
         <p class="fine-print">
           A full day together · 11 AM–around 10 PM · Pick a day and a plan
         </p>
-        <UButton v-if="draft.accepted" class="primary-button" @click="accept"
+        <UButton v-if="returning" class="primary-button" @click="accept"
           >{{
             draft.submitted ? 'View your response' : 'Continue planning'
           }}

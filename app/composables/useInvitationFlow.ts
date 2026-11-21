@@ -4,6 +4,16 @@ import type {
   InvitationDraft,
   InvitationSubmission
 } from '#shared/invitation/types'
+// crypto.randomUUID only exists in secure contexts (HTTPS/localhost), so build
+// a v4 UUID from getRandomValues when testing over plain HTTP on the LAN.
+function newSessionId(): string {
+  if (typeof crypto.randomUUID === 'function') return crypto.randomUUID()
+  const b = crypto.getRandomValues(new Uint8Array(16))
+  b[6] = (b[6]! & 0x0f) | 0x40
+  b[8] = (b[8]! & 0x3f) | 0x80
+  const h = Array.from(b, (x) => x.toString(16).padStart(2, '0')).join('')
+  return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`
+}
 const fresh = (): InvitationDraft => ({
   version: 1,
   sessionId: '',
@@ -63,7 +73,7 @@ export function useInvitationFlow() {
   }
   function accept() {
     hydrate()
-    if (!draft.value.sessionId) draft.value.sessionId = crypto.randomUUID()
+    if (!draft.value.sessionId) draft.value.sessionId = newSessionId()
     draft.value.accepted = true
     persist()
     return navigateTo(draft.value.submitted ? '/thank-you' : '/dates')

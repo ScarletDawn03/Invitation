@@ -8,7 +8,7 @@ async function fillFlow(page: import('@playwright/test').Page) {
   await page.getByText('Explore the day').first().click()
   await expect(
     page.getByRole('heading', {
-      name: 'Kenny Hills Bakers On The Park',
+      name: 'Solace',
       exact: true
     })
   ).toBeVisible()
@@ -113,7 +113,7 @@ test('venue images load and recover with local fallbacks', async ({ page }) => {
   const photos = [
     {
       image: card.locator('.stop-card img').first(),
-      file: /kenny-trx.jpg$/,
+      file: /solace.jpg$/,
       fallback: /lunch-fallback.svg$/
     },
     {
@@ -131,7 +131,7 @@ test('venue images load and recover with local fallbacks', async ({ page }) => {
       .toBeGreaterThan(0)
   }
   await page.route(
-    '**/images/itinerary/venues/{kenny-trx.jpg,aurum.webp}',
+    '**/images/itinerary/venues/{solace.jpg,aurum.webp}',
     (route) => route.abort()
   )
   await page.reload()

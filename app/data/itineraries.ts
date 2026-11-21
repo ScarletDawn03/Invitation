@@ -37,7 +37,7 @@ export const itineraries: ItineraryOption[] = [
     highlights: [
       'MRT ride & boutique browsing',
       'Luxury cinema',
-      'Japanese–Italian dinner'
+      'Dinner by the park'
     ],
     route: 'MRT 16 Sierra → Tun Razak Exchange (TRX)',
     cover: {
@@ -62,7 +62,7 @@ export const itineraries: ItineraryOption[] = [
       },
       {
         time: '12:00 PM',
-        plan: 'A relaxed lunch at Kenny Hills Bakers On The Park'
+        plan: 'A relaxed lunch at Solace, a short hop away in Bukit Bintang'
       },
       {
         time: '1:30 PM',
@@ -74,7 +74,7 @@ export const itineraries: ItineraryOption[] = [
       },
       {
         time: '7:00 PM',
-        plan: 'Dinner at Hokkaido Table'
+        plan: 'Dinner at Kenny Hills Bakers On The Park'
       },
       {
         time: '8:30 PM',
@@ -89,14 +89,13 @@ export const itineraries: ItineraryOption[] = [
       {
         key: 'lunch',
         type: 'lunch',
-        venue: 'Kenny Hills Bakers On The Park',
+        venue: 'Solace',
         description:
-          'A relaxed lunch with coffee and pastries. We’ll request indoor seating.',
-        address: 'The Exchange TRX · On The Park',
-        image: 'images/itinerary/venues/kenny-trx.jpg',
-        imageSource:
-          'https://www.theexchange.my/dine/directory/kennyhillsbakersonthepark/',
-        imageCaption: 'Photo: Kenny Hills Bakers On The Park / The Exchange TRX'
+          'A relaxed lunch with sourdough, pastries and coffee in a bright, greenhouse-like café.',
+        address: '39A & 41, Jalan Sahabat, Bukit Bintang, Kuala Lumpur',
+        image: 'images/itinerary/venues/solace.jpg',
+        imageSource: 'https://theperpetualsaturday.com/solace-bukit-bintang/',
+        imageCaption: 'Photo: The Perpetual Saturday · Solace Bukit Bintang'
       },
       {
         key: 'activity',
@@ -112,13 +111,14 @@ export const itineraries: ItineraryOption[] = [
       {
         key: 'dinner',
         type: 'dinner',
-        venue: 'Hokkaido Table',
+        venue: 'Kenny Hills Bakers On The Park',
         description:
-          'Japanese–Italian dining to round off our day, all in the same mall.',
-        address: 'Level 2, The Exchange TRX',
-        image: 'images/itinerary/venues/hokkaido-prawns.jpg',
-        imageSource: 'https://hokkaidotabletrx.com.my/',
-        imageCaption: 'Photo: Hokkaido Table / GSC'
+          'A relaxed dinner overlooking the park to round off our day. We’ll request indoor seating.',
+        address: 'The Exchange TRX · On The Park',
+        image: 'images/itinerary/venues/kenny-trx.jpg',
+        imageSource:
+          'https://www.theexchange.my/dine/directory/kennyhillsbakersonthepark/',
+        imageCaption: 'Photo: Kenny Hills Bakers On The Park / The Exchange TRX'
       }
     ]
   },
@@ -144,9 +144,10 @@ export const itineraries: ItineraryOption[] = [
       description:
         'A relaxed beginner-friendly pottery session. Make something personal, with no need to get it perfect.',
       address: 'Sri Hartamas, Kuala Lumpur',
-      image: 'images/itinerary/venues/zen-workshop.webp',
+      image: 'images/itinerary/venues/zen-wheel.jpg',
+      imagePosition: 'center bottom',
       imageSource: 'https://zenceramic.asia/',
-      imageCaption: 'Photo: Zen Ceramic · Workshop reference'
+      imageCaption: 'Photo: Zen Ceramic · Wheel throwing'
     },
     schedule: [
       {
@@ -167,7 +168,7 @@ export const itineraries: ItineraryOption[] = [
       },
       {
         time: '6:30 PM',
-        plan: 'Dinner at Rock Salt, Sri Hartamas'
+        plan: 'Dinner at Bacio Italian Kitchen, Mont Kiara'
       },
       {
         time: '8:30 PM',
@@ -198,20 +199,21 @@ export const itineraries: ItineraryOption[] = [
         description:
           'A relaxed beginner-friendly pottery session. Make something personal, with no need to get it perfect.',
         address: 'Sri Hartamas, Kuala Lumpur',
-        image: 'images/itinerary/venues/zen-workshop.webp',
+        image: 'images/itinerary/venues/zen-wheel.jpg',
         imageSource: 'https://zenceramic.asia/',
-        imageCaption: 'Photo: Zen Ceramic · Workshop reference'
+        imageCaption: 'Photo: Zen Ceramic · Wheel throwing'
       },
       {
         key: 'dinner',
         type: 'dinner',
-        venue: 'Rock Salt',
+        venue: 'Bacio Italian Kitchen',
         description:
-          'Wind down over an unhurried dinner together after our creative afternoon.',
-        address: 'Sri Hartamas, Kuala Lumpur',
-        image: 'images/itinerary/venues/rock-salt.jpg',
-        imageSource: 'https://www.rocksalt.com.my/',
-        imageCaption: 'Photo: Rock Salt Restaurant'
+          'Wind down over an unhurried Italian dinner together after our creative afternoon.',
+        address: 'B.Lot MK, Block B, Kiosk 5, Jalan Kiara 5, Mont Kiara, Kuala Lumpur',
+        image: 'images/itinerary/venues/bacio.jpg',
+        imagePosition: 'center 78%',
+        imageSource: 'https://www.portofino.my/bacio',
+        imageCaption: 'Photo: Bacio Italian Kitchen'
       }
     ]
   },
@@ -223,7 +225,7 @@ export const itineraries: ItineraryOption[] = [
     theme: 'gallery',
     mood: 'CULTURED · COLOURFUL · RELAXED',
     description:
-      'A café lunch, beautiful textiles, and a colourful evening together in Chinatown.',
+      'An Italian lunch, beautiful textiles, and a colourful evening together in Chinatown.',
     highlights: [
       'Textiles & heritage',
       'A lingering coffee',
@@ -248,7 +250,7 @@ export const itineraries: ItineraryOption[] = [
       },
       {
         time: '12:00 PM',
-        plan: 'Lunch at Leaf & Co., Jalan Sultan'
+        plan: 'Lunch at Stefania Ristorante Italiano, Platinum Park'
       },
       {
         time: '2:00 PM',
@@ -279,14 +281,14 @@ export const itineraries: ItineraryOption[] = [
       {
         key: 'lunch',
         type: 'lunch',
-        venue: 'Leaf & Co.',
+        venue: 'Stefania Ristorante Italiano',
         description:
-          'Start with coffee and a relaxed lunch in a characterful Chinatown heritage café.',
-        address: '53, Jalan Sultan, Chinatown, Kuala Lumpur',
-        image: 'images/itinerary/venues/leaf-and-co.jpg',
+          'Start with a relaxed Italian lunch of handmade pasta before our afternoon of textiles.',
+        address: 'Unit 1.02, Ground Floor, NAZA Tower, Platinum Park, Kuala Lumpur',
+        image: 'images/itinerary/venues/stefania.jpg',
         imageSource:
-          'https://where2go.com.my/kuala-lumpur/cafes/leaf-and-co-cafe/',
-        imageCaption: 'Photo: Where2Go · Leaf & Co.'
+          'https://www.stefaniarestaurants.com/stefania-ristorante-italiano/',
+        imageCaption: 'Photo: Stefania Ristorante Italiano'
       },
       {
         key: 'activity',
